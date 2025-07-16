@@ -1,0 +1,198 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family:
+      'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', '-apple-system',
+      system-ui, sans-serif;
+  }
+
+  body {
+    @apply bg-bg-primary text-text-primary;
+    line-height: 1.3;
+    font-size: 20px;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
+
+  ::selection {
+    @apply bg-accent text-text-primary;
+  }
+
+  :focus {
+    outline: 2px dashed theme('colors.accent');
+    outline-offset: 3px;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-bg-secondary;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-text-muted rounded;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-accent;
+  }
+
+  /* Dark mode styles */
+  .dark {
+    color-scheme: dark;
+  }
+
+  /* Dark mode semantic color overrides */
+  .dark body {
+    background-color: theme('colors.dark-bg-primary');
+    color: theme('colors.dark-text-primary');
+  }
+
+  .dark .bg-bg-primary {
+    background-color: theme('colors.dark-bg-primary');
+  }
+
+  .dark .bg-bg-secondary {
+    background-color: theme('colors.dark-bg-secondary');
+  }
+
+  .dark .text-text-primary {
+    color: theme('colors.dark-text-primary');
+  }
+
+  .dark .text-text-secondary {
+    color: theme('colors.dark-text-secondary');
+  }
+
+  .dark .text-text-muted {
+    color: theme('colors.dark-text-muted');
+  }
+
+  .dark .border-border-color {
+    border-color: theme('colors.dark-border-color');
+  }
+
+  .dark ::-webkit-scrollbar-track {
+    background-color: theme('colors.dark-bg-secondary');
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    background-color: theme('colors.dark-text-muted');
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background-color: theme('colors.accent');
+  }
+}
+
+@layer components {
+  .section-heading {
+    @apply flex items-center text-text-primary text-2xl md:text-3xl font-bold mb-2;
+  }
+
+  .section-heading::after {
+    content: '';
+    @apply block h-px bg-border-color ml-5 flex-1 relative top-[-5px];
+  }
+
+  .nav-link {
+    @apply text-text-secondary hover:text-accent transition-colors duration-300 font-mono text-sm;
+  }
+
+  .writing-mode-vertical {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+
+  /* Custom animations */
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.3s ease;
+  }
+
+  .fade-enter-from,
+  .fade-leave-to {
+    opacity: 0;
+  }
+
+  /* Numbered headings */
+  .numbered-heading {
+    @apply flex items-center text-text-primary text-2xl font-bold mb-10;
+  }
+
+  .numbered-heading::before {
+    @apply text-accent font-mono text-lg mr-2;
+    counter-increment: section;
+    content: '0' counter(section) '.';
+  }
+
+  .numbered-heading::after {
+    content: '';
+    @apply block h-px bg-border-color ml-5 flex-1 relative top-[-5px];
+  }
+
+  /* Button styles */
+  .btn {
+    @apply inline-flex items-center justify-center px-7 py-5 border border-accent text-accent rounded font-mono text-sm transition-all duration-300;
+  }
+
+  .btn:hover {
+    @apply bg-accent/10 transform translate-x-[-4px] translate-y-[-4px];
+    box-shadow: 4px 4px 0 0 #efbcd5;
+  }
+
+  /* Project card hover effect */
+  .project-card {
+    @apply transition-transform duration-300;
+  }
+
+  .project-card:hover {
+    @apply transform translate-y-[-7px];
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .filter-none {
+    filter: none;
+  }
+
+  .filter-grayscale {
+    filter: grayscale(100%) contrast(1) brightness(90%);
+  }
+
+  .filter-grayscale:hover {
+    filter: none;
+  }
+
+  /* Custom focus styles */
+  .focus-visible {
+    outline: 2px dashed #efbcd5;
+    outline-offset: 3px;
+  }
+
+  /* Counter for ordered lists */
+  .counter-reset-item {
+    counter-reset: item;
+  }
+
+  .counter-increment-item {
+    counter-increment: item;
+  }
+}
+
+/* Counter for numbered sections */
+body {
+  counter-reset: section;
+}
