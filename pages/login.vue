@@ -134,12 +134,23 @@ definePageMeta({
   layout: false,
 });
 
+const route = useRoute();
+
+// Get redirect URL from query parameter, default to home page
+const redirectUrl = route.query.redirect || '/';
+
 const signInWithGitHub = async () => {
-  await authClient.signIn.social({ provider: 'github', callbackURL: '/' });
+  await authClient.signIn.social({ 
+    provider: 'github', 
+    callbackURL: redirectUrl 
+  });
 };
 
 const signInWithGoogle = async () => {
-  await authClient.signIn.social({ provider: 'google', callbackURL: '/' });
+  await authClient.signIn.social({ 
+    provider: 'google', 
+    callbackURL: redirectUrl 
+  });
 };
 
 const isLoading = ref(false);

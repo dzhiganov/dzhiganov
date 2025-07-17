@@ -42,7 +42,6 @@
         Authentication is handled through Better Auth with industry-standard
         security
       </li>
-      <li>Download links use secure tokens with expiration</li>
       <li>We implement reasonable security measures to protect your data</li>
     </ul>
 
@@ -54,6 +53,7 @@
       <li>Resend for email newsletters</li>
       <li>YouTube API for video content</li>
       <li>These services have their own privacy policies.</li>
+      <li>MongoDB Atlas for database hosting</li>
     </ul>
 
     <h2 class="text-xl font-semibold text-text-primary mt-8 mb-2">

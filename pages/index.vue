@@ -158,7 +158,7 @@
         <article
           v-for="post in posts"
           :key="post._path"
-          class="group relative bg-white dark:bg-gradient-to-br dark:from-gray-800 dark:to-gray-900 rounded-xl shadow-lg dark:shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-xl dark:hover:shadow-accent/10 transition-all duration-300 cursor-pointer hover:scale-[1.02] hover:border-gray-300 dark:hover:border-accent/30"
+          class="border border-gray-200 dark:border-gray-700 group relative bg-white dark:bg-gradient-to-br dark:from-gray-800 dark:to-gray-900 rounded-xl shadow-lg dark:shadow-2xl overflow-hidden hover:shadow-xl dark:hover:shadow-accent/10 transition-all duration-300 cursor-pointer hover:scale-[1.02] hover:border-gray-300 dark:hover:border-accent/30"
           @click="navigateTo(post?.path)"
         >
           <!-- Gradient overlay for extra depth -->
@@ -253,13 +253,17 @@
     </div>
   </section>
 </template>
-
 <script setup>
 import { authClient } from '~/lib/auth-client';
 
-// Get user authentication state
-const { data: sessionData } = authClient.useSession();
-const user = computed(() => sessionData?.value?.user);
+// Get user authentication state - using same approach as materials page
+async function getSession() {
+  const { data: session } = await authClient.getSession();
+  return session;
+}
+
+const session = await getSession();
+const user = computed(() => session?.user);
 
 // Fetch blog posts
 const { data: blogPosts } = await useAsyncData('blog-posts', async () => {

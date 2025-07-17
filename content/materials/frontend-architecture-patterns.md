@@ -5,7 +5,7 @@ thumbnail: '/materials/frontend-architecture-patterns/mvc.png'
 videoId: 'https://www.youtube.com/watch?v=ixee55xm_d8&feature=youtu.be'
 videoTitle: 'Frontend Architecture Patterns: From MVC to Modern Patterns'
 duration: '1:12:45'
-publishedAt: '2024-01-20'
+publishedAt: '2025-07-17'
 tags: ['Architecture', 'Frontend', 'MVC', 'MVP', 'Patterns']
 difficulty: 'Advanced'
 resources:
@@ -13,7 +13,7 @@ resources:
     {
       type: 'slides',
       title: 'Slides',
-      link: 'https://drive.google.com/file/d/1J3dkH-x5clvjFN6ejQwFFhRSdwPnfkBV/view?usp=sharing',
+      link: 'https://drive.google.com/file/d/1qUDl459i26e1_KBwwqTBOUQfjtC971a-/view?usp=sharing',
     },
     {
       type: 'audio',

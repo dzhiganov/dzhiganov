@@ -11,11 +11,16 @@
 
       <AppFooter />
     </div>
+    <ClientOnly>
+      <ConsentNotice />
+    </ClientOnly>
   </div>
   <Analytics />
 </template>
 
 <script setup>
+import ConsentNotice from '~/components/ConsentNotice.vue';
+
 useHead({
   title: 'Dima Zhiganov',
   meta: [

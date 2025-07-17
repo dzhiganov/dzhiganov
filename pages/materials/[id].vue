@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen pt-24 px-6 lg:px-12 max-w-screen-xl mx-auto">
     <!-- Loading State -->
-    <div v-if="pending" class="max-w-4xl mx-auto">
+    <div v-if="isSessionPending || pending" class="max-w-4xl mx-auto">
       <div class="animate-pulse">
         <div class="h-8 bg-surface/20 rounded mb-4 w-3/4"></div>
         <div class="h-4 bg-surface/20 rounded mb-2 w-1/2"></div>
@@ -50,7 +50,7 @@
     </div>
 
     <!-- Materials Content (authenticated users) -->
-    <div v-else-if="data" class="max-w-4xl mx-auto mt-12">
+    <div v-else-if="data && session" class="max-w-4xl mx-auto mt-12">
       <!-- Material Header -->
       <div class="mb-12">
         <div class="flex flex-wrap items-center gap-4 mb-4">
@@ -76,32 +76,6 @@
         <p class="text-text-secondary text-xl leading-relaxed">
           {{ data.description }}
         </p>
-      </div>
-
-      <!-- Access Notice -->
-      <div class="bg-accent/10 border border-accent/20 rounded-lg p-6 mb-8">
-        <div class="flex items-start">
-          <svg
-            class="w-6 h-6 text-accent mr-3 mt-0.5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-            />
-          </svg>
-          <div>
-            <h3 class="text-accent font-semibold mb-2">Access Granted</h3>
-            <p class="text-text-secondary text-sm">
-              You're logged in and have access to these materials. This page
-              will remain available for your reference.
-            </p>
-          </div>
-        </div>
       </div>
 
       <!-- Additional Materials - Top -->
@@ -153,28 +127,41 @@
 </template>
 
 <script setup>
-import { computed, ref } from 'vue';
+import { computed } from 'vue';
 import AdditionalMaterials from '~/components/AdditionalMaterials.vue';
 import { authClient } from '~/lib/auth-client';
 
+const isSessionPending = ref(true);
+const session = ref(null);
+
 async function getSession() {
-  const { data: session } = await authClient.getSession();
-  return session;
+  try {
+    isSessionPending.value = true;
+    const { data: session } = await authClient.getSession();
+    isSessionPending.value = false;
+    return session;
+  } catch (error) {
+    console.error('Error fetching session:', error);
+    return null;
+  } finally {
+    isSessionPending.value = false;
+  }
 }
 
 // Auth middleware - redirect to login if not authenticated
-onBeforeMount(async () => {
-  const session = await getSession();
-  if (!session) {
-    await navigateTo('/login');
+onMounted(async () => {
+  const sessionData = await getSession();
+  console.log('session', sessionData);
+  if (!sessionData) {
+    // Store the current material URL for redirect after login
+    const currentUrl = route.fullPath;
+    await navigateTo(`/login?redirect=${encodeURIComponent(currentUrl)}`);
+  } else {
+    session.value = sessionData;
   }
 });
 
 const route = useRoute();
-const email = ref('');
-const newsletter = ref(false);
-const submitted = ref(false);
-const isSubmitting = ref(false);
 
 // Remove token-based logic since we're using auth now
 

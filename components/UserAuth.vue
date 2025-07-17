@@ -115,6 +115,7 @@ const handleSignOut = async () => {
   await authClient.signOut();
   showPopup.value = false;
   await navigateTo('/');
+  window.location.reload();
 };
 
 // Close popup when clicking outside

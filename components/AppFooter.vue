@@ -16,7 +16,7 @@
       >
     </div>
     <div class="text-xs font-mono select-none">
-      © {{ new Date().getFullYear() }} Dima Zhiganov. All rights reserved.
+      © {{ new Date().getFullYear() }} Dmitrii Zhiganov. All rights reserved.
     </div>
   </footer>
 </template>
