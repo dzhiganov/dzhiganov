@@ -12,11 +12,12 @@
       <AppFooter />
     </div>
   </div>
+  <Analytics />
 </template>
 
 <script setup>
 useHead({
-  title: 'John Doe - Full Stack Developer',
+  title: 'Dima Zhiganov',
   meta: [
     {
       name: 'description',
