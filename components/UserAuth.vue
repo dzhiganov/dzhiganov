@@ -93,22 +93,18 @@ async function getSession() {
 onMounted(async () => {
   const session = await getSession();
   sessionData.value = session;
-  console.log('session', session);
 });
 
 const user = computed(() => {
   // Try different ways to access the user data
   const userData =
     sessionData?.value?.user || sessionData?.value?.session?.user;
-  console.log('User computed:', userData);
   return userData;
 });
 
 const togglePopup = (event) => {
   event.stopPropagation();
-  console.log('Avatar clicked, current popup state:', showPopup.value);
   showPopup.value = !showPopup.value;
-  console.log('New popup state:', showPopup.value);
 };
 
 const handleSignOut = async () => {

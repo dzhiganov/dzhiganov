@@ -73,7 +73,6 @@ const props = defineProps({
   },
 });
 
-console.log('resources', props.resources);
 
 const hasAdditionalMaterials = computed(() => {
   return props.resources && props.resources.length > 0;

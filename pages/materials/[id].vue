@@ -151,7 +151,6 @@ async function getSession() {
 // Auth middleware - redirect to login if not authenticated
 onMounted(async () => {
   const sessionData = await getSession();
-  console.log('session', sessionData);
   if (!sessionData) {
     // Store the current material URL for redirect after login
     const currentUrl = route.fullPath;
@@ -192,7 +191,6 @@ const { data, pending, error } = await useLazyAsyncData(
           statusMessage: 'Materials not found',
         });
       }
-      console.log('content', content);
       return content;
     } catch (err) {
       console.error('Error fetching materials:', err);
