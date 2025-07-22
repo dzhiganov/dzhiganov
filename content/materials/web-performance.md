@@ -1,8 +1,8 @@
 ---
 title: 'Web Performance: Building Fast Web Applications'
 description: 'Comprehensive guide to web performance optimization covering loading time, UI speed, and advanced techniques for building fast web applications'
-thumbnail: '/materials/performance/main.jpeg'
-videoId: 'https://www.youtube.com/watch?v=ixee55xm_d8&feature=youtu.be'
+thumbnail: '/materials/performance/main.png'
+videoId: 'https://www.youtube.com/watch?v=KUdqbIHn8Ic'
 videoTitle: 'Web Performance: Building Fast Web Applications - Complete Guide'
 duration: '1:08:26'
 publishedAt: '2025-07-20'
@@ -24,6 +24,11 @@ resources:
       type: 'slides',
       title: 'Slides',
       link: 'https://drive.google.com/file/d/1bqVdmrgDxmwgm3h0-j77u-S4fLZKQ8vi/view?usp=sharing',
+    },
+    {
+      type: 'audio',
+      'Podcast (AI generated)',
+      link: 'https://notebooklm.google.com/notebook/a180abb6-9fa6-43e3-ae12-f8e149a6514c/audio',
     },
   ]
 ---
@@ -56,7 +61,7 @@ Let's start with a fundamental question: when we say "web performance," what exa
 
 Consider this scenario: an application takes 5 minutes to load but works incredibly fast afterward. Can we call it performant? I'd argue no. But here's the twist - the opposite is equally problematic. If an application loads quickly but runs slowly, we can't call it performant either.
 
-![Intro](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_174329_www.youtube.com.jpeg?updatedAt=1753029324597)
+![Intro](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_174329_www.youtube.com.jpeg?updatedAt=1753029324597){width="600"}
 
 This brings us to a crucial understanding: **web performance has two distinct dimensions:**
 
@@ -83,7 +88,7 @@ With millions of users, even small percentages matter enormously. 3% user loss i
 
 ### Real-World Impact Data
 
-![Impact](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_174447_www.youtube.com.jpeg?updatedAt=1753029324644)
+![Impact](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_174447_www.youtube.com.jpeg?updatedAt=1753029324644){width="600"}
 
 The business impact is measurable and significant:
 
@@ -122,11 +127,11 @@ Here's an interesting distinction:
 
 ### Real-World Examples
 
-![Example Amazon](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_174417_www.youtube.com.jpeg?updatedAt=1753029324707)
+![Example Amazon](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_174417_www.youtube.com.jpeg?updatedAt=1753029324707){width="600"}
 
 **Amazon** avoids heavy animations to ensure interface consistency across all devices and network conditions. Function over form because users want to complete transactions quickly.
 
-![Figma Example](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_174522_www.youtube.com.jpeg?updatedAt=1753029324654)
+![Figma Example](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_174522_www.youtube.com.jpeg?updatedAt=1753029324654){width="600"}
 
 **Figma** prioritizes UI speed over loading time. It's task-oriented, complex, involves many interactions, and serves primarily B2B users willing to wait for initial load because they understand the value.
 
@@ -159,7 +164,7 @@ Before optimizing, honestly evaluate your application:
 
 ### Understanding Core Metrics
 
-![Core Metrics](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_174640_www.youtube.com.jpeg?updatedAt=1753029324658)
+![Core Metrics](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_174640_www.youtube.com.jpeg?updatedAt=1753029324658){width="600"}
 
 Google Lighthouse provides these benchmarks for optimization:
 
@@ -172,7 +177,7 @@ Google Lighthouse provides these benchmarks for optimization:
 
 #### Content Delivery Networks: The Foundation
 
-![CDN](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_174823_www.youtube.com.jpeg?updatedAt=1753029322580)
+![CDN](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_174823_www.youtube.com.jpeg?updatedAt=1753029322580){width="600"}
 
 CDNs are probably your highest-impact optimization. They work by caching resources geographically closer to users, eliminating the need for requests to travel to your origin server.
 
@@ -185,7 +190,7 @@ CDNs are probably your highest-impact optimization. They work by caching resourc
 - **Minification**: Optimizes CSS/JavaScript on the fly
 - **Smart Caching**: Optimizes cache hit ratios across edge servers
 
-![CDN Coverage](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_175334_www.youtube.com.jpeg?updatedAt=1753029322609)
+![CDN Coverage](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_175334_www.youtube.com.jpeg?updatedAt=1753029322609){width="600"}
 
 **CDN Challenges:**
 
@@ -195,7 +200,7 @@ CDNs are probably your highest-impact optimization. They work by caching resourc
 
 #### Caching Strategy
 
-![Caching Strategy](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_175521_www.youtube.com.jpeg?updatedAt=1753029322650)
+![Caching Strategy](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_175521_www.youtube.com.jpeg?updatedAt=1753029322650){width="600"}
 
 | Content Type         | Cache Strategy | TTL        | Reasoning                           |
 | -------------------- | -------------- | ---------- | ----------------------------------- |
@@ -204,7 +209,7 @@ CDNs are probably your highest-impact optimization. They work by caching resourc
 | **Dynamic Content**  | ⚠️ Maybe       | Short (5s) | API responses during high traffic   |
 | **Private Data**     | ❌ Never       | N/A        | Security risk                       |
 
-![Cache Hit](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_175539_www.youtube.com.jpeg?updatedAt=1753029322538)
+![Cache Hit](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_175539_www.youtube.com.jpeg?updatedAt=1753029322538){width="600"}
 
 **Cache Hit Ratio Goals:**
 
@@ -220,7 +225,7 @@ CDNs are probably your highest-impact optimization. They work by caching resourc
 
 #### Server-Side Optimizations
 
-![Optimize DNS](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_175625_www.youtube.com.jpeg?updatedAt=1753029322540)
+![Optimize DNS](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_175625_www.youtube.com.jpeg?updatedAt=1753029322540){width="600"}
 
 Beyond CDNs, optimize your origin server:
 
@@ -235,7 +240,7 @@ Beyond CDNs, optimize your origin server:
 
 #### The PRPL Pattern
 
-![PRPL](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_18316_www.youtube.com.jpeg?updatedAt=1753029327235)
+![PRPL](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_18316_www.youtube.com.jpeg?updatedAt=1753029327235){width="600"}
 
 This strategy follows **Preload, Render, Precache, Lazy Load**:
 
@@ -250,7 +255,7 @@ Target resources not detected by the browser's preload scanner:
 **Above-the-Fold Priority**
 Focus on content visible without scrolling. Load everything needed for this section first, defer everything else.
 
-![Above the fold content](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_18259_www.youtube.com.jpeg?updatedAt=1753029327124)
+![Above the fold content](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_18259_www.youtube.com.jpeg?updatedAt=1753029327124){width="600"}
 
 **Render Optimization**
 
@@ -259,7 +264,7 @@ Focus on content visible without scrolling. Load everything needed for this sect
 
 **Cache Resources in Service Workers Cache**
 
-![Service Worker](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_175713_www.youtube.com.jpeg?updatedAt=1753029322560)
+![Service Worker](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_175713_www.youtube.com.jpeg?updatedAt=1753029322560){width="600"}
 
 **Precaching Strategies**
 
@@ -287,7 +292,7 @@ Apply strategically to:
 
 #### Modern Media Formats
 
-![Image Optimization](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_175639_www.youtube.com.jpeg?updatedAt=1753029322607)
+![Image Optimization](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_175639_www.youtube.com.jpeg?updatedAt=1753029322607){width="600"}
 
 **Image Optimization:**
 
@@ -312,7 +317,7 @@ Apply strategically to:
 
 #### Font Optimization
 
-![FOUT](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_181321_www.youtube.com.jpeg?updatedAt=1753029327376)
+![FOUT](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_181321_www.youtube.com.jpeg?updatedAt=1753029327376){width="600"}
 
 Fonts block rendering to prevent Flash of Unstyled Text (FOUT), so optimization is crucial:
 
@@ -322,7 +327,7 @@ Fonts block rendering to prevent Flash of Unstyled Text (FOUT), so optimization 
 
 #### JavaScript Optimization
 
-![Tree Shaking](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_181336_www.youtube.com.jpeg?updatedAt=1753029329160)
+![Tree Shaking](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_181336_www.youtube.com.jpeg?updatedAt=1753029329160){width="600"}
 
 **Tree Shaking**: Remove unused code during build
 
@@ -330,7 +335,7 @@ Fonts block rendering to prevent Flash of Unstyled Text (FOUT), so optimization 
 - Mark side-effect-free modules appropriately
 - Target common sources: large libraries, default imports
 
-![Code Splitting](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_181355_www.youtube.com.jpeg?updatedAt=1753029329160)
+![Code Splitting](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_181355_www.youtube.com.jpeg?updatedAt=1753029329160){width="600"}
 
 **Code Splitting**: Divide bundles into smaller chunks
 
@@ -342,11 +347,11 @@ Fonts block rendering to prevent Flash of Unstyled Text (FOUT), so optimization 
 
 #### Breaking Down Long Tasks
 
-![Event Loop](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_18147_www.youtube.com.jpeg?updatedAt=1753029329273)
+![Event Loop](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_18147_www.youtube.com.jpeg?updatedAt=1753029329273){width="600"}
 
 Long-running JavaScript blocks the main thread, making pages unresponsive. Since JavaScript is single-threaded, the main thread can only handle one operation at a time.
 
-![Web workers](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_182058_www.youtube.com.jpeg?updatedAt=1753029329231)
+![Web workers](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_182058_www.youtube.com.jpeg?updatedAt=1753029329231){width="600"}
 
 **Solutions:**
 
@@ -397,7 +402,7 @@ The key to smooth animations is leveraging the GPU effectively:
 
 #### Browser Rendering Pipeline
 
-![Rendering pipeline](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_182211_www.youtube.com.jpeg?updatedAt=1753029329220)
+![Rendering pipeline](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_182211_www.youtube.com.jpeg?updatedAt=1753029329220){width="600"}
 
 Understanding the rendering pipeline helps optimize effectively:
 
@@ -483,7 +488,7 @@ function processLargeDataset(data) {
 
 #### DOM Manipulation Optimization
 
-![Layout trashing](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_182254_www.youtube.com.jpeg?updatedAt=1753029329252)
+![Layout trashing](https://ik.imagekit.io/x2cofkp5v/Screenshot_20-7-2025_182254_www.youtube.com.jpeg?updatedAt=1753029329252){width="600"}
 
 **Layout Thrashing Prevention**
 

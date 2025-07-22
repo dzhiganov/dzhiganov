@@ -1,7 +1,7 @@
 ---
 title: 'Frontend Architecture Patterns'
 description: 'Comprehensive guide to frontend architecture patterns including MVC, MVP, and modern client-side patterns'
-thumbnail: '/materials/frontend-architecture-patterns/mvc.png'
+thumbnail: '/materials/frontend-architecture-patterns/main.png'
 videoId: 'https://www.youtube.com/watch?v=ixee55xm_d8&feature=youtu.be'
 videoTitle: 'Frontend Architecture Patterns: From MVC to Modern Patterns'
 duration: '1:12:45'

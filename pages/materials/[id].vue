@@ -334,7 +334,7 @@ useHead(() => ({
 
 /* Step 4: Code blocks with better dark mode contrast */
 :deep(.materials-content code) {
-  background-color: #f5f5f5;
+  background-color: rgb(57, 57, 57);
   color: #d63384;
   padding: 0.2em 0.4em;
   border-radius: 4px;
@@ -349,7 +349,8 @@ useHead(() => ({
 }
 
 :deep(.materials-content pre) {
-  background-color: #f8f9fa;
+  background-color: #272727;
+  color: #e9ecef;
   border: 1px solid #e9ecef;
   padding: 1.5em;
   border-radius: 8px;

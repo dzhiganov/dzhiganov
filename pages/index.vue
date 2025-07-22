@@ -270,7 +270,9 @@ const { data: blogPosts } = await useAsyncData('blog-posts', async () => {
   try {
     const collectionResponse = await queryCollection('materials').all();
 
-    return collectionResponse;
+    return collectionResponse.sort((a, b) => {
+      return new Date(b.meta.publishedAt) - new Date(a.meta.publishedAt);
+    });
   } catch (error) {
     console.error('Error fetching blog posts:', error);
     return [];
