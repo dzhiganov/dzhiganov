@@ -2,7 +2,7 @@
   <section id="projects" class="py-24 px-6 lg:px-12 max-w-screen-xl mx-auto">
     <div class="max-w-6xl">
       <h2 class="section-heading">
-        <span class="text-accent font-mono text-xl">02.</span>
+        <span class="text-accent  text-xl">02.</span>
         Featured Projects
       </h2>
       
@@ -41,11 +41,11 @@
                   <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
                   <div class="w-3 h-3 bg-green-500 rounded-full"></div>
                 </div>
-                <div class="text-gray-400 text-sm font-mono">{{ project.filename }}</div>
+                <div class="text-gray-400 text-sm ">{{ project.filename }}</div>
               </div>
               
               <!-- Code Content -->
-              <div class="p-6 font-mono text-sm leading-relaxed">
+              <div class="p-6  text-sm leading-relaxed">
                 <div class="space-y-1">
                   <div v-for="(line, lineIndex) in project.codeLines" :key="lineIndex" class="flex">
                     <span class="text-gray-500 w-8 text-right mr-4">{{ lineIndex + 1 }}</span>
@@ -75,7 +75,7 @@
       <div class="text-center mt-16">
         <a 
           href="#" 
-          class="inline-flex items-center border border-accent text-accent px-7 py-4 rounded-xl font-mono hover:bg-accent/10 transition-all duration-300"
+          class="inline-flex items-center border border-accent text-accent px-7 py-4 rounded-xl  hover:bg-accent/10 transition-all duration-300"
         >
           View All Projects
           <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

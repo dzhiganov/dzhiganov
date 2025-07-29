@@ -1,9 +1,9 @@
 <template>
-  <div class="flex items-center">
+  <div>
     <!-- User is logged in -->
     <div v-if="user" class="relative flex items-center">
       <!-- User Avatar or First Letter - Clickable -->
-      <div class="relative">
+      <div class="relative flex items-center">
         <button
           @click="togglePopup"
           class="focus:outline-none focus:ring-2 focus:ring-accent rounded-full"
@@ -58,7 +58,7 @@
 
             <button
               @click="handleSignOut"
-              class="w-full text-left px-3 py-2 text-sm font-mono text-text-muted hover:text-accent hover:bg-surface/30 rounded transition-colors"
+              class="w-full text-left px-3 py-2 text-sm text-text-muted hover:text-accent hover:bg-surface/30 rounded transition-colors"
             >
               Sign Out
             </button>
@@ -71,7 +71,7 @@
     <div v-else>
       <NuxtLink
         to="/login"
-        class="btn-primary text-accent px-4 py-2 rounded font-mono text-sm hover:bg-accent/10 transition-colors"
+        class="px-4 py-2 rounded text-sm hover:bg-accent/10 transition-colors font-semibold"
       >
         Login
       </NuxtLink>

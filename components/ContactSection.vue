@@ -1,8 +1,8 @@
 <template>
   <section id="contact" class="py-24 px-6 lg:px-12 max-w-screen-xl mx-auto">
     <div class="max-w-2xl mx-auto text-center">
-      <h2 class="text-green font-mono text-base mb-5">
-        <span class="text-green font-mono text-xl">04.</span>
+      <h2 class="text-green  text-base mb-5">
+        <span class="text-green  text-xl">04.</span>
         What's Next?
       </h2>
 
@@ -18,7 +18,7 @@
 
       <a
         href="mailto:brittanychiang@gmail.com"
-        class="inline-block border border-green text-green px-7 py-5 rounded font-mono hover:bg-green/10 transition-colors"
+        class="inline-block border border-green text-green px-7 py-5 rounded  hover:bg-green/10 transition-colors"
       >
         Say Hello
       </a>

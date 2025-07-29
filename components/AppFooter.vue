@@ -15,7 +15,7 @@
         >Terms of Service</NuxtLink
       >
     </div>
-    <div class="text-xs font-mono select-none">
+    <div class="text-xs  select-none">
       © {{ new Date().getFullYear() }} Dmitrii Zhiganov. All rights reserved.
     </div>
   </footer>

@@ -104,7 +104,7 @@
   }
 
   .nav-link {
-    @apply text-text-secondary hover:text-accent transition-colors duration-300 font-mono text-sm;
+    @apply text-text-secondary hover:text-accent transition-colors duration-300  text-sm;
   }
 
   .writing-mode-vertical {
@@ -129,7 +129,7 @@
   }
 
   .numbered-heading::before {
-    @apply text-accent font-mono text-lg mr-2;
+    @apply text-accent  text-lg mr-2;
     counter-increment: section;
     content: '0' counter(section) '.';
   }
@@ -141,7 +141,7 @@
 
   /* Button styles */
   .btn {
-    @apply inline-flex items-center justify-center px-7 py-5 border border-accent text-accent rounded font-mono text-sm transition-all duration-300;
+    @apply inline-flex items-center justify-center px-7 py-5 border border-accent text-accent rounded  text-sm transition-all duration-300;
   }
 
   .btn:hover {

@@ -42,7 +42,7 @@
       <div class="space-y-4">
         <NuxtLink
           to="/#videos"
-          class="inline-block border border-accent text-accent px-6 py-3 rounded font-mono hover:bg-accent/10 transition-colors"
+          class="inline-block border border-accent text-accent px-6 py-3 rounded hover:bg-accent/10 transition-colors"
         >
           Browse Videos
         </NuxtLink>
@@ -57,14 +57,14 @@
           <span
             v-for="tag in data.tags"
             :key="tag"
-            class="text-accent font-mono text-sm bg-accent/10 px-3 py-1 rounded"
+            class="text-accent text-sm bg-accent/10 px-3 py-1 rounded"
           >
             {{ tag }}
           </span>
-          <span class="text-text-muted font-mono text-sm">
+          <span class="text-text-muted text-sm">
             {{ data.difficulty }}
           </span>
-          <span class="text-text-muted font-mono text-sm">
+          <span class="text-text-muted text-sm">
             {{ data.duration }}
           </span>
         </div>
@@ -101,7 +101,7 @@
         <a
           :href="`${data.meta.videoId}`"
           target="_blank"
-          class="inline-flex items-center bg-accent text-primary px-6 py-3 rounded font-mono hover:bg-accent/90 transition-colors"
+          class="inline-flex items-center bg-accent text-primary px-6 py-3 rounded hover:bg-accent/90 transition-colors"
         >
           <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
             <path d="M8 5v14l11-7z" />
@@ -118,7 +118,7 @@
       </p>
       <NuxtLink
         to="/login"
-        class="inline-block mt-4 bg-accent text-primary px-6 py-3 rounded font-mono hover:bg-accent/90 transition-colors"
+        class="inline-block mt-4 bg-accent text-primary px-6 py-3 rounded hover:bg-accent/90 transition-colors"
       >
         Log In
       </NuxtLink>

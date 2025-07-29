@@ -47,7 +47,7 @@
           :href="resource.link"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center px-4 py-2 border border-accent text-accent rounded font-mono text-sm hover:bg-accent/10 transition-colors"
+          class="inline-flex items-center px-4 py-2 border border-accent text-accent rounded  text-sm hover:bg-accent/10 transition-colors"
         >
           <ArrowTopRightOnSquareIcon class="w-4 h-4 mr-2" />
           {{ getResourceButtonText(resource.type) }}

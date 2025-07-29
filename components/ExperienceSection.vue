@@ -2,7 +2,7 @@
   <section id="experience" class="py-24 px-6 lg:px-12 max-w-screen-xl mx-auto">
     <div class="max-w-4xl">
       <h2 class="section-heading">
-        <span class="text-green font-mono text-xl">02.</span>
+        <span class="text-green  text-xl">02.</span>
         Where I've Worked
       </h2>
       
@@ -14,7 +14,7 @@
             :key="index"
             @click="activeJob = index"
             :class="[
-              'whitespace-nowrap px-6 py-3 text-left border-b-2 md:border-b-0 md:border-l-2 transition-colors duration-300 font-mono text-sm',
+              'whitespace-nowrap px-6 py-3 text-left border-b-2 md:border-b-0 md:border-l-2 transition-colors duration-300  text-sm',
               activeJob === index 
                 ? 'border-green text-green bg-green/10' 
                 : 'border-navy-light text-slate hover:text-green hover:bg-green/5'
@@ -32,7 +32,7 @@
                 {{ jobs[activeJob].title }}
                 <span class="text-green">@ {{ jobs[activeJob].company }}</span>
               </h3>
-              <p class="text-slate font-mono text-sm mt-1">
+              <p class="text-slate  text-sm mt-1">
                 {{ jobs[activeJob].duration }}
               </p>
             </div>
