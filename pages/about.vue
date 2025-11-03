@@ -224,20 +224,50 @@
         <!-- Resume Section -->
         <div class="mt-12 mb-12">
           <h2 class="text-xl font-bold text-text-primary mb-6">Resume</h2>
-          <a
-            href="https://drive.google.com/file/d/1EI8PIxlqYsviPm9Sp-hIm5plVkDo2cEF/view"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="flex items-center space-x-4 group cursor-pointer outline-none"
-          >
-            <DocumentIcon
-              class="w-6 h-6 text-text-muted group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors flex-shrink-0"
-            />
-            <div>
-              <p class="text-text-primary font-medium text-base">Resume</p>
-              <p class="text-text-muted text-sm">PDF</p>
-            </div>
-          </a>
+          <div class="flex flex-col gap-6 w-fit">
+            <!-- Open Resume -->
+            <a
+              href="resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center space-x-4 group cursor-pointer outline-none"
+            >
+              <DocumentIcon
+                class="w-6 h-6 text-text-muted group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors flex-shrink-0"
+              />
+              <div>
+                <p class="text-text-primary font-medium text-base">
+                  View Resume
+                </p>
+                <p class="text-text-muted text-sm">Open in browser</p>
+              </div>
+            </a>
+
+            <!-- Download Resume -->
+            <a
+              href="resume.pdf"
+              download="Dmitriy_Zhiganov_Resume.pdf"
+              class="flex items-center space-x-4 group cursor-pointer outline-none"
+            >
+              <svg
+                class="w-6 h-6 text-text-muted group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors flex-shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                />
+              </svg>
+              <div>
+                <p class="text-text-primary font-medium text-base">Download</p>
+                <p class="text-text-muted text-sm">Save as PDF</p>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </div>
