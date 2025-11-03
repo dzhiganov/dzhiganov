@@ -1,7 +1,7 @@
 <template>
-  <div class="min-h-screen pt-24 px-6 lg:px-12 max-w-screen-xl mx-auto">
+  <div class="min-h-screen pt-12 px-6 lg:px-12 max-w-screen-xl mx-auto">
     <!-- Loading State -->
-    <div v-if="isSessionPending || pending" class="max-w-4xl mx-auto">
+    <div v-if="pending" class="max-w-4xl mx-auto">
       <div class="animate-pulse">
         <div class="h-8 bg-surface/20 rounded mb-4 w-3/4"></div>
         <div class="h-4 bg-surface/20 rounded mb-2 w-1/2"></div>
@@ -15,7 +15,7 @@
     </div>
 
     <!-- Error State -->
-    <div v-else-if="error" class="max-w-2xl mx-auto text-center py-12">
+    <!-- <div v-else-if="error" class="max-w-2xl mx-auto text-center py-12">
       <div class="mb-6">
         <svg
           class="w-20 h-20 text-red-500 mx-auto mb-4"
@@ -47,10 +47,10 @@
           Browse Videos
         </NuxtLink>
       </div>
-    </div>
+    </div> -->
 
     <!-- Materials Content (authenticated users) -->
-    <div v-else-if="data && session" class="max-w-4xl mx-auto mt-12">
+    <div v-else-if="data" class="max-w-4xl mx-auto mt-12">
       <!-- Material Header -->
       <div class="mb-12">
         <div class="flex flex-wrap items-center gap-4 mb-4">
@@ -90,7 +90,7 @@
       <AdditionalMaterials :resources="data?.meta?.resources" />
 
       <!-- Related Video Link -->
-      <div class="mt-16 p-8 bg-surface/10 rounded-lg text-center">
+      <div class="mt-16 p-8 bg-gray-100 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-lg text-center">
         <h3 class="text-text-primary text-2xl font-semibold mb-4">
           Watch the Tutorial
         </h3>
@@ -101,7 +101,7 @@
         <a
           :href="`${data.meta.videoId}`"
           target="_blank"
-          class="inline-flex items-center bg-accent text-primary px-6 py-3 rounded hover:bg-accent/90 transition-colors"
+          class="inline-flex items-center bg-gray-300 dark:bg-gray-800 text-gray-900 dark:text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-400 dark:hover:bg-gray-700 transition-all duration-300"
         >
           <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
             <path d="M8 5v14l11-7z" />
@@ -129,36 +129,6 @@
 <script setup>
 import { computed } from 'vue';
 import AdditionalMaterials from '~/components/AdditionalMaterials.vue';
-import { authClient } from '~/lib/auth-client';
-
-const isSessionPending = ref(true);
-const session = ref(null);
-
-async function getSession() {
-  try {
-    isSessionPending.value = true;
-    const { data: session } = await authClient.getSession();
-    isSessionPending.value = false;
-    return session;
-  } catch (error) {
-    console.error('Error fetching session:', error);
-    return null;
-  } finally {
-    isSessionPending.value = false;
-  }
-}
-
-// Auth middleware - redirect to login if not authenticated
-onMounted(async () => {
-  const sessionData = await getSession();
-  if (!sessionData) {
-    // Store the current material URL for redirect after login
-    const currentUrl = route.fullPath;
-    await navigateTo(`/login?redirect=${encodeURIComponent(currentUrl)}`);
-  } else {
-    session.value = sessionData;
-  }
-});
 
 const route = useRoute();
 
@@ -225,9 +195,6 @@ useHead(() => ({
 </script>
 
 <style scoped>
-/* Minimal Markdown Styles - Browser Defaults + Theme Colors */
-
-/* Step 1: Beautiful typography with Google Fonts */
 .content-wrapper {
   font-family: 'Lora', serif;
   font-size: 18px;
@@ -239,22 +206,18 @@ useHead(() => ({
   color: #fff;
 }
 
-/* Step 2: Restore browser defaults (bypasses Tailwind reset) */
 :deep(.materials-content) {
-  /* Reset Tailwind's aggressive resets */
   margin: revert;
   padding: revert;
   font-size: revert;
   font-weight: revert;
   line-height: revert;
 
-  /* Keep container styles */
   max-width: none;
   font-family: inherit;
   color: inherit;
 }
 
-/* Restore default heading styles with Chivo */
 :deep(.materials-content h1) {
   font-family: 'Chivo', sans-serif;
   font-size: 2.5em;
@@ -292,7 +255,6 @@ useHead(() => ({
   margin: 1.67em 0;
 }
 
-/* Restore default paragraph and list styles with Lora */
 :deep(.materials-content p) {
   font-family: 'Lora', serif;
   margin: 1em 0;
@@ -314,7 +276,6 @@ useHead(() => ({
   line-height: 1.6;
 }
 
-/* Step 3: Dark mode colors only */
 .dark :deep(.materials-content) {
   color: #fff;
 }
@@ -329,10 +290,9 @@ useHead(() => ({
 }
 
 .dark :deep(.materials-content a) {
-  color: #efbcd5; /* accent pink */
+  color: #efbcd5;
 }
 
-/* Step 4: Code blocks with better dark mode contrast */
 :deep(.materials-content code) {
   background-color: rgb(57, 57, 57);
   color: #d63384;
@@ -373,15 +333,38 @@ useHead(() => ({
   font-size: inherit;
 }
 
-/* Step 5: Links with brand colors */
 :deep(.materials-content a) {
-  color: #8661c1; /* muted purple */
-  text-decoration: underline;
+  color: var(--text-primary);
+  text-decoration: underline dashed;
+  text-decoration-color: currentColor;
+  transition: text-decoration 0.3s ease;
 }
 
-/* Step 6: Subtle blockquotes */
+:deep(.materials-content a:hover) {
+  text-decoration: none;
+}
+
+:deep(.materials-content h1 a),
+:deep(.materials-content h2 a),
+:deep(.materials-content h3 a),
+:deep(.materials-content h4 a),
+:deep(.materials-content h5 a),
+:deep(.materials-content h6 a) {
+  color: inherit;
+  text-decoration: none;
+}
+
+:deep(.materials-content h1 a:visited),
+:deep(.materials-content h2 a:visited),
+:deep(.materials-content h3 a:visited),
+:deep(.materials-content h4 a:visited),
+:deep(.materials-content h5 a:visited),
+:deep(.materials-content h6 a:visited) {
+  color: inherit;
+}
+
 :deep(.materials-content blockquote) {
-  border-left: 4px solid #efbcd5; /* accent pink */
+  border-left: 4px solid #efbcd5;
   background-color: rgba(239, 188, 213, 0.1);
   padding: 1em;
   margin: 1em 0;

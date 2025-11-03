@@ -1,13 +1,13 @@
 <template>
   <button
     @click="toggleTheme"
-    class="relative p-2 rounded-lg bg-surface/50 hover:bg-surface transition-all duration-300 dark:bg-charcoal/50 dark:hover:bg-charcoal group"
+    class="relative p-2 rounded-lg bg-bg-secondary/50 hover:bg-bg-secondary transition-all duration-300 dark:bg-charcoal/50 dark:hover:bg-charcoal group outline-none"
     aria-label="Toggle theme"
   >
     <!-- Sun Icon (Light Mode) -->
     <svg
       v-show="!isDark"
-      class="w-5 h-5 text-secondary transition-all duration-300 group-hover:text-accent group-hover:rotate-12"
+      class="w-5 h-5 text-text-secondary transition-all duration-300 group-hover:text-yellow-400 group-hover:rotate-12"
       fill="currentColor"
       viewBox="0 0 24 24"
     >
@@ -17,7 +17,7 @@
     <!-- Moon Icon (Dark Mode) -->
     <svg
       v-show="isDark"
-      class="w-5 h-5 text-accent transition-all duration-300 group-hover:text-secondary group-hover:-rotate-12"
+      class="w-5 h-5 text-slate-400 transition-all duration-300 group-hover:text-slate-300 group-hover:-rotate-12"
       fill="currentColor"
       viewBox="0 0 24 24"
     >
@@ -31,3 +31,13 @@ import { useTheme } from '~/composables/useTheme'
 
 const { isDark, toggleTheme } = useTheme()
 </script>
+
+<style scoped>
+button {
+  outline: none !important;
+}
+
+button:focus {
+  outline: none !important;
+}
+</style>

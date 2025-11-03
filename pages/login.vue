@@ -8,10 +8,6 @@
       >
         <div class="text-center">
           <h2 class="text-3xl font-bold">Sign in to your account</h2>
-          <p class="mt-3 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Get instant access to slides, exclusive resources, and step-by-step
-            guides from every tutorial
-          </p>
         </div>
 
         <div class="space-y-6 mt-6">
@@ -63,85 +59,6 @@
               By signing in, you agree to our terms of service and privacy
               policy
             </p>
-          </div>
-        </div>
-
-        <!-- Feature highlights -->
-        <div class="py-6">
-          <h3
-            class="text-lg font-bold text-gray-900 dark:text-white mb-6 text-center"
-          >
-            What you'll get access to:
-          </h3>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Audio versions card -->
-            <div
-              class="text-center p-4 hover:scale-[1.02] transition-all duration-300 group"
-            >
-              <div class="flex justify-center mb-3">
-                <div
-                  class="w-10 h-10 bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-900/40 dark:to-blue-800/40 rounded-lg flex items-center justify-center group-hover:from-blue-200 group-hover:to-blue-300 dark:group-hover:from-blue-800/60 dark:group-hover:to-blue-700/60 transition-all duration-300"
-                >
-                  <SpeakerWaveIcon
-                    class="w-5 h-5 text-blue-600 dark:text-blue-400"
-                  />
-                </div>
-              </div>
-              <h4 class="font-bold text-gray-900 dark:text-white text-sm mb-1">
-                Audio versions
-              </h4>
-              <p
-                class="text-gray-600 dark:text-gray-400 text-xs leading-relaxed"
-              >
-                Learn on the go with audio formats
-              </p>
-            </div>
-
-            <!-- Text versions card -->
-            <div
-              class="text-center p-4 hover:scale-[1.02] transition-all duration-300 group"
-            >
-              <div class="flex justify-center mb-3">
-                <div
-                  class="w-10 h-10 bg-gradient-to-br from-green-100 to-green-200 dark:from-green-900/40 dark:to-green-800/40 rounded-lg flex items-center justify-center group-hover:from-green-200 group-hover:to-green-300 dark:group-hover:from-green-800/60 dark:group-hover:to-green-700/60 transition-all duration-300"
-                >
-                  <DocumentTextIcon
-                    class="w-5 h-5 text-green-600 dark:text-green-400"
-                  />
-                </div>
-              </div>
-              <h4 class="font-bold text-gray-900 dark:text-white text-sm mb-1">
-                Text versions
-              </h4>
-              <p
-                class="text-gray-600 dark:text-gray-400 text-xs leading-relaxed"
-              >
-                Detailed explanations and code examples
-              </p>
-            </div>
-
-            <!-- Presentation slides card -->
-            <div
-              class="text-center p-4 hover:scale-[1.02] transition-all duration-300 group"
-            >
-              <div class="flex justify-center mb-3">
-                <div
-                  class="w-10 h-10 bg-gradient-to-br from-purple-100 to-purple-200 dark:from-purple-900/40 dark:to-purple-800/40 rounded-lg flex items-center justify-center group-hover:from-purple-200 group-hover:to-purple-300 dark:group-hover:from-purple-800/60 dark:group-hover:to-purple-700/60 transition-all duration-300"
-                >
-                  <PresentationChartBarIcon
-                    class="w-5 h-5 text-purple-600 dark:text-purple-400"
-                  />
-                </div>
-              </div>
-              <h4 class="font-bold text-gray-900 dark:text-white text-sm mb-1">
-                Presentation slides
-              </h4>
-              <p
-                class="text-gray-600 dark:text-gray-400 text-xs leading-relaxed"
-              >
-                Quick reference and teaching materials
-              </p>
-            </div>
           </div>
         </div>
       </div>
@@ -246,11 +163,6 @@
 </template>
 
 <script setup>
-import {
-  DocumentTextIcon,
-  PresentationChartBarIcon,
-  SpeakerWaveIcon,
-} from '@heroicons/vue/24/outline';
 import { authClient } from '~/lib/auth-client';
 
 definePageMeta({

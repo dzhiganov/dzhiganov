@@ -10,11 +10,16 @@
           <!-- Profile Section -->
           <div class="p-6 border-b border-surface/20">
             <div class="flex items-center space-x-3">
-              <div
-                class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center"
+              <NuxtLink
+                to="/"
+                class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 hover:opacity-80 transition-opacity"
               >
-                <span class="text-accent font-bold text-lg">DZ</span>
-              </div>
+                <img
+                  src="@/public/author.jpg"
+                  alt="Avatar"
+                  class="w-full h-full object-cover"
+                />
+              </NuxtLink>
               <div>
                 <h1 class="text-text-primary font-semibold">
                   Dmitriy Zhiganov
@@ -76,7 +81,7 @@
             <!-- Social Links -->
             <div class="flex justify-center space-x-4">
               <a
-                href="https://github.com/delawere"
+                href="https://github.com/dzhiganov"
                 target="_blank"
                 class="text-text-muted hover:text-accent transition-colors p-1"
               >

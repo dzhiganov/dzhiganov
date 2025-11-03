@@ -1,5 +1,5 @@
 ---
-title: 'Web Performance: Building Fast Web Applications'
+title: 'Web Performance'
 description: 'Comprehensive guide to web performance optimization covering loading time, UI speed, and advanced techniques for building fast web applications'
 thumbnail: '/materials/performance/main.png'
 videoId: 'https://www.youtube.com/watch?v=KUdqbIHn8Ic'
@@ -27,8 +27,8 @@ resources:
     },
     {
       type: 'audio',
-      'Podcast (AI generated)',
-      link: 'https://notebooklm.google.com/notebook/a180abb6-9fa6-43e3-ae12-f8e149a6514c/audio',
+      title: 'Podcast (AI generated)',
+      link: 'https://drive.google.com/file/d/1MObtxzA4n3DxeKL3TPRI3kSW4W20rc_c/view?usp=sharing',
     },
   ]
 ---

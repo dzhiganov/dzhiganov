@@ -68,10 +68,10 @@
     </div>
 
     <!-- User is not logged in -->
-    <div v-else>
+    <div v-else class="flex items-center">
       <NuxtLink
         to="/login"
-        class="px-4 py-2 rounded text-sm hover:bg-accent/10 transition-colors font-semibold"
+        class="text-text-muted hover:text-text-primary transition-colors text-sm font-medium whitespace-nowrap"
       >
         Login
       </NuxtLink>

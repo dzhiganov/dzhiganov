@@ -17,8 +17,8 @@ resources:
     },
     {
       type: 'audio',
-      'Podcast (AI generated)',
-      link: 'https://notebooklm.google.com/notebook/aacea2b8-5b25-4d1b-a2e8-96f31665fa38/audio',
+      title: 'Podcast (AI generated)',
+      link: 'https://drive.google.com/file/d/1WcWiR9FUMJnDh3dZHOc5WAgoC1OUFQyI/view?usp=sharing',
     },
   ]
 ---

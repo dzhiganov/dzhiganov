@@ -1,13 +1,13 @@
 <template>
   <!-- Hero Section -->
-  <section class="flex flex-col items-center justify-center px-4 py-20">
-    <div class="max-w-2xl mx-auto text-center">
+  <section class="flex flex-col items-center justify-center px-4 py-8">
+    <div class="max-w-2xl mx-auto text-center animate-fade-up">
       <!-- Author Image -->
       <div class="mb-8">
         <img
           src="/author.jpg"
           alt="Dima Zhiganov"
-          class="w-32 h-32 rounded-full mx-auto object-cover shadow-lg"
+          class="w-32 h-32 rounded-3xl mx-auto object-cover shadow-md dark:shadow-none dark:border-2 dark:border-gray-600 transform -rotate-3"
         />
       </div>
 
@@ -67,81 +67,6 @@
       </div>
 
       <!-- Materials Access CTA - Only show if user is not logged in -->
-      <div
-        v-if="!user"
-        class="bg-neutral-200 dark:bg-gray-900 rounded-xl p-8 max-w-lg mx-auto transition-all duration-300"
-      >
-        <div class="text-center">
-          <div class="mb-4">
-            <h3 class="text-2xl font-bold text-text-primary mb-2">
-              Get All Materials
-            </h3>
-            <p class="text-text-muted mb-6 leading-relaxed">
-              Get instant access to slides, exclusive resources, and
-              step-by-step guides from every tutorial
-            </p>
-          </div>
-
-          <div class="space-y-3">
-            <NuxtLink
-              to="/login"
-              class="w-full bg-blue-500 text-bg-primary font-bold py-4 px-6 rounded-lg hover:bg-blue-600 transition-all duration-300 flex items-center justify-center group shadow-lg hover:shadow-xl transform hover:scale-105"
-            >
-              Get Access Now
-            </NuxtLink>
-          </div>
-
-          <!-- Feature highlights -->
-          <div class="mt-6 pt-6 border-t border-border-color">
-            <div
-              class="flex items-center justify-center space-x-6 text-text-muted text-sm"
-            >
-              <div class="flex items-center">
-                <svg
-                  class="w-4 h-4 mr-1 text-text-primary"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-                Audio version
-              </div>
-              <div class="flex items-center">
-                <svg
-                  class="w-4 h-4 mr-1 text-text-primary"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-                Text version
-              </div>
-              <div class="flex items-center">
-                <svg
-                  class="w-4 h-4 mr-1 text-text-primary"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-                Slides
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -149,16 +74,17 @@
   <section class="py-20 px-4">
     <div class="max-w-4xl mx-auto">
       <h2
-        class="text-5xl font-bold text-gray-900 dark:text-white mb-8 text-center"
+        class="text-5xl font-bold text-gray-900 dark:text-white mb-8 text-center animate-fade-up"
       >
         Latest Posts
       </h2>
 
       <div v-if="posts.length > 0" class="space-y-8">
         <article
-          v-for="post in posts"
+          v-for="(post, index) in posts"
           :key="post._path"
-          class="border border-gray-200 dark:border-gray-700 group relative bg-white dark:bg-gradient-to-br dark:from-gray-800 dark:to-gray-900 rounded-xl shadow-lg dark:shadow-2xl overflow-hidden hover:shadow-xl dark:hover:shadow-accent/10 transition-all duration-300 cursor-pointer hover:scale-[1.02] hover:border-gray-300 dark:hover:border-accent/30"
+          class="border border-gray-200 dark:border-gray-700 group relative bg-white dark:bg-gradient-to-br dark:from-gray-800 dark:to-gray-900 rounded-xl shadow-lg dark:shadow-2xl overflow-hidden hover:shadow-xl dark:hover:shadow-accent/10 transition-all duration-300 cursor-pointer hover:scale-[1.02] hover:border-gray-300 dark:hover:border-accent/30 animate-fade-up"
+          :style="{ animationDelay: `${index * 0.1}s` }"
           @click="navigateTo(post?.path)"
         >
           <!-- Gradient overlay for extra depth -->

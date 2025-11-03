@@ -1,44 +1,51 @@
 <template>
   <header
-    class="top-0 fixed left-0 right-0 z-50 w-full flex justify-between px-4 py-2"
+    class="top-0 fixed left-0 right-0 z-50 w-full flex justify-between items-center px-4 py-2 backdrop-blur-md bg-white/10 dark:bg-black/20"
     aria-label="Main navigation sidebar"
   >
-    <!-- Logo/Avatar and Name -->
-    <div class="flex items-center">
+    <!-- Left side - Avatar -->
+    <NuxtLink
+      to="/"
+      class="w-6 h-6 rounded-lg overflow-hidden flex-shrink-0 hover:opacity-80 transition-opacity"
+    >
+      <img
+        src="@/public/author.jpg"
+        alt="Avatar"
+        class="w-full h-full object-cover"
+      />
+    </NuxtLink>
+
+    <!-- Center - Navigation Links -->
+    <nav class="flex items-center space-x-6 absolute left-1/2 transform -translate-x-1/2 w-auto">
       <NuxtLink
         to="/"
-        class="group focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-lg transition-all duration-300"
-        aria-label="Home"
+        class="text-text-muted hover:text-text-primary transition-colors text-sm font-medium whitespace-nowrap"
+        :class="{ 'text-accent': $route.path === '/' }"
       >
-        <div class="flex items-center space-x-3">
-          <!-- Logo Icon -->
-          <div
-            class="w-10 h-10 bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105"
-          >
-            <span class="text-white font-bold text-lg">DZ</span>
-          </div>
-
-          <!-- Name with styling -->
-          <div class="flex flex-col">
-            <h1
-              class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 font-['Inter']"
-            >
-              Dima Zhiganov
-            </h1>
-            <p
-              class="text-xs text-gray-500 dark:text-gray-400 font-medium tracking-wide uppercase font-['Inter']"
-            >
-              Software Engineer
-            </p>
-          </div>
-        </div>
+        Home
       </NuxtLink>
-    </div>
+      <NuxtLink
+        to="/projects"
+        class="text-text-muted hover:text-text-primary transition-colors text-sm font-medium whitespace-nowrap"
+        :class="{ 'text-accent': $route.path === '/projects' }"
+      >
+        Projects
+      </NuxtLink>
+      <NuxtLink
+        to="/about"
+        class="text-text-muted hover:text-text-primary transition-colors text-sm font-medium whitespace-nowrap"
+        :class="{ 'text-accent': $route.path === '/about' }"
+      >
+        About
+      </NuxtLink>
+    </nav>
 
     <!-- Right side - User Auth and Theme Toggle -->
-    <div class="flex items-center space-x-4">
-      <UserAuth />
-      <ThemeToggle />
+    <div class="flex items-center space-x-4 justify-end">
+      <div class="flex items-center space-x-4">
+        <ThemeToggle />
+        <UserAuth />
+      </div>
     </div>
   </header>
 </template>
@@ -51,6 +58,14 @@ const isDark = computed(() => {
 </script>
 
 <style scoped>
+:deep(a) {
+  outline: none;
+}
+
+:deep(a:focus) {
+  outline: none;
+}
+
 .slide-fade-enter-active {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }

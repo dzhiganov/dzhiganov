@@ -5,7 +5,7 @@
     <AppHeader />
     <div class="flex flex-col flex-1">
       <!-- Main Content -->
-      <main class="flex-1 w-full mt-24">
+      <main class="flex-1 w-full mt-12">
         <NuxtPage />
       </main>
 
