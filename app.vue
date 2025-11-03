@@ -23,7 +23,7 @@ import { Analytics } from '@vercel/analytics/nuxt';
 import ConsentNotice from '~/components/ConsentNotice.vue';
 
 useHead({
-  title: 'Dima Zhiganov',
+  title: 'Dima Zhiganov | Senior Frontend Developer',
   meta: [
     {
       name: 'description',

@@ -1,8 +1,16 @@
 <template>
   <div class="min-h-screen">
     <!-- Banner -->
-    <div class="w-full relative overflow-hidden">
-      <img src="@/public/banner.png" alt="Banner" class="w-full h-auto" />
+    <div class="w-full relative overflow-hidden bg-gray-200 dark:bg-gray-800" style="aspect-ratio: 1200/300">
+      <NuxtImg
+        src="/banner.png"
+        alt="Banner"
+        class="w-full h-full object-cover"
+        sizes="100vw"
+        quality="75"
+        loading="eager"
+        preload
+      />
       <div class="absolute inset-0 bg-black/40"></div>
       <a
         href="https://unsplash.com/@purzlbaum"
@@ -221,11 +229,9 @@
           </a>
         </div>
 
-        <!-- Resume Section -->
         <div class="mt-12 mb-12">
           <h2 class="text-xl font-bold text-text-primary mb-6">Resume</h2>
           <div class="flex flex-col gap-6 w-fit">
-            <!-- Open Resume -->
             <a
               href="resume.pdf"
               target="_blank"
@@ -243,7 +249,6 @@
               </div>
             </a>
 
-            <!-- Download Resume -->
             <a
               href="resume.pdf"
               download="Dmitriy_Zhiganov_Resume.pdf"
