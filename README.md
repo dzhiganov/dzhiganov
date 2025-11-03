@@ -1,42 +1,11 @@
-# Nuxt 3 Minimal Starter
+Hello there 👋
+Senior Frontend Developer based in Germany
+Currently, Frontend Engineer at Trade Republic (Europe's largest savings platform);
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
-
-## Setup
-
-Make sure to install the dependencies:
-
-```bash
-# yarn
-yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install
-```
-
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+⚙️ I use daily: .ts, .js, .tsx, .vue, .css, .json
+🔧 Deep into: React, Vue, TypeScript and testing
+🛠️ Built: UI component libraries used by multiple teams, automated testing systems integrated into CI, full-stack applications (Node.js, PostgreSQL)
+🌍 7.5+ years across FinTech, Web Security, and Healthcare
+📍 Open to: interesting projects, collaborations, and mentoring opportunities
+✍️ [My blog](https://www.dimazhiganov.dev/)
+▶️ [YT channel](https://www.youtube.com/@d.zhiganov)
