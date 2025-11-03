@@ -2,14 +2,11 @@
   <div class="min-h-screen">
     <!-- Banner -->
     <div class="w-full relative overflow-hidden bg-gray-200 dark:bg-gray-800" style="aspect-ratio: 1200/300">
-      <NuxtImg
+      <img
         src="/banner.png"
         alt="Banner"
         class="w-full h-full object-cover"
-        sizes="100vw"
-        quality="75"
         loading="eager"
-        preload
       />
       <div class="absolute inset-0 bg-black/40"></div>
       <a

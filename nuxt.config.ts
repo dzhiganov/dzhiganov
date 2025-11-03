@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxtjs/google-fonts',
     '@nuxt/content',
+    '@nuxt/image',
   ],
   css: ['~/assets/css/main.css'],
   googleFonts: {
@@ -42,6 +43,11 @@ export default defineNuxtConfig({
     '/': {
       prerender: true,
       ssr: false,
+    },
+    '/resume': {
+      prerender: true,
+      ssr: false,
+      redirect: '/resume.pdf',
     },
   },
 });
